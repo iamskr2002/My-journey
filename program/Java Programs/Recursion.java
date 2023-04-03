@@ -2,26 +2,32 @@ import java.util.*;
 
 public class Recursion{
 
-    public static int countPaths(int i, int j, int n, int m){
-        if(i==n || j==m){
-            return 0;
+    public static void printSubset(ArrayList<Integer> subset){
+        for(int i=0; i<subset.size(); i++){
+            System.out.print(subset.get(i)+ " ");
+        }
+        System.out.println();
+    }
+
+    public static void findsubset(int m, ArrayList<Integer> subset, int j){
+        if(j==0){
+            printSubset(subset);
+            return ;
         }
 
-        if(i==n-1 && j==m-1){
-            return 1;
-        }
+        //add hoga
+        subset.add(m);
+        findsubset(m+1, subset, j-1);
 
-        int downPaths = countPaths(i+1, j, n, m);
-
-        int rightPaths = countPaths(i, j+1, n, m);
-
-        return downPaths + rightPaths;
+        //add nahi hoga
+        subset.remove(subset.size()-1);
+        findsubset(m+1, subset, j-1);
     }
 
 
     public static void main(String args[]){
-        int n=3, m=4;
-        int totalPaths = countPaths(0, 0, n, m);
-        System.out.println(totalPaths);
+        int j = 2f;
+        ArrayList<Integer> subset = new ArrayList<>();
+       findsubset(1, subset, j);
     }
 }
