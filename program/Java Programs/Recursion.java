@@ -26,7 +26,7 @@ public class Recursion{
 
 
     public static void main(String args[]){
-        int j = 2f;
+        int j = 2;
         ArrayList<Integer> subset = new ArrayList<>();
        findsubset(1, subset, j);
     }
