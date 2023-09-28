@@ -46,7 +46,7 @@ public class WordPlay {
         System.out.println(wordPlay.isVowel('a'));
 
         // testing replaceVowel method
-        System.out.println(wordPlay.replaceVowel("Hello World", '*'));
+        System.out.println(wordPlay.replaceVowel("Helllo World", '*'));
 
         // Testing emphasize method
         System.out.println(wordPlay.emphasize("dna ctgaaactga", 'a'));
